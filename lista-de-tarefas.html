@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents
+    </title>
+</head>
+<body>
+    
+    
+    <h1>Lista de Taferas </h1>
+    <input type="text" id="tarefa">
+    <button onclick="addTarefa()">adicionar</button>
+    <ul id="lista">
+
+        
+    </ul>
+
+    <script>
+        var lista = document.getElementById("lista")
+
+        
+        function addTarefa(){
+
+            var tarefa = document.getElementById("tarefa")
+
+            if(tarefa.value != ""){
+                var li = document.createElement("li")
+                li.innerText = tarefa.value
+                lista.appendChild(li)
+            }
+            else{
+                alert("Por Favor adicione algo na lista!")
+            }
+        }
+    </script>
+
+
+</body>
+</html>
