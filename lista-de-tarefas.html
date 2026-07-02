@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documents
-    </title>
+    <title>Documents</title>
+    <style>
+        body{
+            background-color: #1e1e2f;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 80px;
+        }
+        input{
+            padding: 7px;
+        }
+        button{
+            padding: 6px;
+            background-color: #7c3aed;
+            color: aliceblue;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 1s;
+        }
+        button:hover{
+            scale: 1.05;    
+    
+        }
+
+    </style>
 </head>
 <body>
     
@@ -28,12 +51,21 @@
             if(tarefa.value != ""){
                 var li = document.createElement("li")
                 li.innerText = tarefa.value
+                li.onclick = () => li.remove()
                 lista.appendChild(li)
+                tarefa.value = ""
             }
             else{
                 alert("Por Favor adicione algo na lista!")
             }
         }
+
+        document.addEventListener("keypress", (ev)=>{
+            if(ev.key == "Enter"){
+                addTarefa()
+            }
+        })
+
     </script>
 
 
